@@ -1,0 +1,29 @@
+{
+  "name": "nodejsconjwt",
+  "version": "1.0.0",
+  "description": "Aplicación API con nodejs y MOngoDb",
+  "main": "main.js",
+  "scripts": {
+    "start": "nodemon main.js"
+  },
+  "repository": {},
+  "keywords": [
+    "nodejs",
+    "node",
+    "api",
+    "APIREST"
+  ],
+  "author": "Manuel Ortega Carcamo",
+  "license": "MIT",
+  "bugs": {},
+  "homepage": "",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.4",
+    "express": "^4.15.3",
+    "install": "^0.10.1",
+    "mongoose": "^4.11.1",
+    "nodemon": "^1.11.0",
+    "simple-express-logger": "^2.0.0"
+  }
+}
