@@ -25,7 +25,7 @@ app.use(cors());
 app.set('port', config.puerto);
 app.use(function(req, res, next) {
 	res.setHeader('Access-Control-Allow-Origin', config.domain);
-	res.setHeader('Access-Control-Allow-Methods', 'POST,GET,PUT,DELETE');
+	res.setHeader('Access-Control-Allow-Methods', 'POST,GET,PATCH,PUT,DELETE');
 	res.setHeader('Content-Type', 'application/json');
 	next();
 });
@@ -66,35 +66,15 @@ rutas.get('/', function(req, res) {
 //     res.send({ 'Mensaje': 'API REST v1' });
 // });
 
-
-//Products
-rutas.get('/api/product', (req, res, next) => {
-	const obj = productCtrl.listProduct(req, res)
-	res.send( {'product' : obj} );
-	next()
-});
 rutas.route('/api/product/:id')
 	.get 	(productCtrl.listProduct)
 	.post 	(productCtrl.createProduct)
-	.put 	(productCtrl.updateProduct)
+	.patch 	(productCtrl.updateProduct)
 	.delete (productCtrl.deleteProduct)
 
 //···································································································
 // PUT 	    Cambia la estructura de la tabla si no tiene los mismo campos 
 // PATCH    Conserva la estructura y solo modifica los datos
-
-//FUNCIONA
-// rutas.put('/api/test/:xxx', (req, res, next) => {
-// 	const obj = productCtrl.updateProduct(req, res)
-// 	res.send( {'product' : obj} );
-// 	next()
-// });
-// rutas.delete('/api/test/:xxx', (req, res, next) => {
-// 	const obj = productCtrl.updateProduct(req, res)
-// 	res.send( {'product' : obj} );
-// 	next()
-// });
-
 
 
 app.use(rutas);
