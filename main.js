@@ -18,6 +18,8 @@ const app = express();
 // if (process.env.NODE_ENV === 'development') { app.use(errorhandler()) }
 
 
+lalalalal
+
 // Midlewares API - Configuración
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
